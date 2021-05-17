@@ -133,16 +133,11 @@ function body_lock_remove() {
 function body_lock_add() {
 	let body = document.querySelector("body");
 	body.classList.add("_lock");
-	// const wrapper = document.querySelector('.wrapper')
-	// const scrollWidth = window.innerWidth - document.documentElement.clientWidth
-	// wrapper.style.paddingRight = scrollWidth + 'px'
-	// console.log(wrapper.style.paddingRight);
 }
 
 $(".owl-carousel").owlCarousel({
 	dots: true,
 	items: 4,
-	loop: true,
 	autoWidth: true,
 	autoHeight: true,
 	margin: 25,
