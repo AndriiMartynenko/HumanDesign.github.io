@@ -2041,6 +2041,10 @@ textarea {
   max-width: 175px;
 }
 
+.owl-item:first-child {
+  margin-left: 10vw;
+}
+
 .owl-theme .owl-nav.disabled + .owl-dots {
   margin: 70px 0px 0px 0px;
 }
