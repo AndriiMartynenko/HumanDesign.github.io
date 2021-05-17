@@ -176,23 +176,40 @@ document.querySelectorAll('.tab').forEach(item =>
 
 document.querySelector('.tab').click()
 
-// const breadcrumb = document.querySelector('.menu__breadcrumb')
-// const list = document.querySelectorAll('.menu__list>li>a.menu__link')
-// const hiddenLink = () => {
-// 	list.forEach(item => {
-// 		item.classList.add('menu__link-close')
-// 	})
-// }
-// list.forEach(link =>
-// 	link.addEventListener('click', (e) => {
-// 		const target = e.target
-// 		target.preventDefault;
-// 		hiddenLink()
-// 		breadcrumb.classList.remove('menu__breadcrumb-disable')
-// 		target.classList.remove('menu__link-close')
-// 		const text = target.textContent
-// 		console.log(text);
-// 	})
-// )
+const menuLink = document.querySelectorAll('.menu__link')
+const menuSubList = document.querySelectorAll('.menu__sub-list')
+const menuList = document.querySelectorAll('.menu__list>li')
+const breadcrumb = document.querySelector('.menu__breadcrumb')
+const breadcrumbLink = document.querySelector('.menu__breadcrumb-link')
+
+const openItem = (items, className) => {
+	items.forEach(item => {
+		item.classList.add(className)
+	})
+};
+const closeItem = (items, className) => {
+	items.forEach(item => {
+		item.classList.remove(className)
+	})
+};
+
+
+menuLink.forEach(item => {
+	item.addEventListener('click', () => {
+		openItem(menuLink, 'menu__link-close')
+		openItem(menuList, 'border-none')
+		breadcrumb.classList.add('_active')
+		if (item.nextElementSibling) {
+			item.nextElementSibling.classList.add('_active')
+		}
+	})
+})
+
+breadcrumbLink.addEventListener('click', () => {
+	closeItem(menuLink, 'menu__link-close');
+	closeItem(menuList, 'border-none')
+	closeItem(menuSubList, '_active')
+	breadcrumb.classList.remove('_active')
+})
 
 /* beautify ignore:end */
