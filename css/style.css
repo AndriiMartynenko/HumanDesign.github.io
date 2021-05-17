@@ -1850,7 +1850,7 @@ textarea {
   right: 0;
   height: 12px;
   width: 7px;
-  background-image: url("../img/icon/arrow-right.svg");
+  background-image: url(../img/icon/arrow-right.svg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
