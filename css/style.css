@@ -2425,6 +2425,10 @@ textarea {
   padding: 60px 0px 100px 0px;
 }
 
+.faq > .container > .row > .col-3 {
+  width: 20%;
+}
+
 .tabs__wrapper {
   color: #333;
   top: 70px;
@@ -2432,6 +2436,22 @@ textarea {
   height: 78%;
   min-height: 500px;
   position: relative;
+}
+
+.tabs__scroll {
+  position: absolute;
+  top: 35px;
+  background: -o-radial-gradient(95.35% 100%, 110.87% 1422.5%, #114ABF 0%, #1A72FB 100%);
+  background: radial-gradient(110.87% 1422.5% at 95.35% 100%, #114ABF 0%, #1A72FB 100%);
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  height: 74px;
+  width: 120%;
+  z-index: 5;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
 .tabs__box {
@@ -2495,9 +2515,10 @@ textarea {
   padding: 25px;
   position: relative;
   border-radius: 8px;
-  -webkit-transition: all 0.8s;
-  -o-transition: all 0.8s;
-  transition: all 0.8s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  z-index: 10;
 }
 
 .tab:after {
@@ -2524,11 +2545,6 @@ textarea {
 .tab__active,
 .tab:active {
   color: #fff;
-  background: -o-radial-gradient(95.35% 100%, 110.87% 1422.5%, #114ABF 0%, #1A72FB 100%);
-  background: radial-gradient(110.87% 1422.5% at 95.35% 100%, #114ABF 0%, #1A72FB 100%);
-  -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-  width: 120%;
 }
 
 .tab__active:after,

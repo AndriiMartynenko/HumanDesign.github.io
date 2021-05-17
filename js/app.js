@@ -152,6 +152,14 @@ $(".owl-carousel").owlCarousel({
 document.querySelectorAll('.tab').forEach(item =>
 	item.addEventListener('click', (e) => {
 		e.preventDefault();
+
+		// Плавная прокрутка
+		const tabsScroll = document.querySelector('.tabs__scroll');
+		tabsScroll.style.height = item.offsetHeight + 'px'
+		tabsScroll.style.top = item.offsetTop + 'px'
+		// Плавная прокрутка
+
+
 		const id = e.target.getAttribute('href').replace('#', '')
 
 		document.querySelectorAll('.tab').forEach(
