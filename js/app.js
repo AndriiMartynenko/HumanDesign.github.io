@@ -144,14 +144,30 @@ $(".owl-carousel").owlCarousel({
 	dotsEach: true,
 })
 
-document.querySelectorAll('.tab').forEach(item =>
-	item.addEventListener('click', (e) => {
+
+const openItem = (items, className) => {
+	items.forEach(item => {
+		item.classList.add(className)
+	})
+};
+const closeItem = (items, className) => {
+	items.forEach(item => {
+		item.classList.remove(className)
+	})
+};
+
+
+const tabs = document.querySelectorAll('.tab')
+
+tabs.forEach(tab =>
+	tab.addEventListener('click', (e) => {
 		e.preventDefault();
+		closeItem(tabs, 'after-none')
 
 		// Плавная прокрутка
 		const tabsScroll = document.querySelector('.tabs__scroll');
-		tabsScroll.style.height = item.offsetHeight + 'px'
-		tabsScroll.style.top = item.offsetTop + 'px'
+		tabsScroll.style.height = tab.offsetHeight + 'px'
+		tabsScroll.style.top = tab.offsetTop + 'px'
 		// Плавная прокрутка
 
 
@@ -164,8 +180,13 @@ document.querySelectorAll('.tab').forEach(item =>
 			child => child.classList.remove('content__active')
 		)
 
-		item.classList.add('tab__active')
+		tab.classList.add('tab__active')
 		document.getElementById(id).classList.add('content__active')
+
+		if (tab.previousElementSibling) {
+			closeItem(tabs, 'after-none')
+			tab.previousElementSibling.classList.add('after-none')
+		}
 	})
 )
 
@@ -176,17 +197,6 @@ const menuSubList = document.querySelectorAll('.menu__sub-list')
 const menuList = document.querySelectorAll('.menu__list>li')
 const breadcrumb = document.querySelector('.menu__breadcrumb')
 const breadcrumbLink = document.querySelector('.menu__breadcrumb-link')
-
-const openItem = (items, className) => {
-	items.forEach(item => {
-		item.classList.add(className)
-	})
-};
-const closeItem = (items, className) => {
-	items.forEach(item => {
-		item.classList.remove(className)
-	})
-};
 
 
 menuLink.forEach(item => {
@@ -209,32 +219,6 @@ breadcrumbLink.addEventListener('click', () => {
 
 
 const boxItems = document.querySelectorAll('.box-items')
-/* boxItems.forEach(
-	item => {
-		item.addEventListener('mouseenter', () => {
-			const children = item.children
-			item.classList.add('scale')
-			boxItems.forEach((item) => {
-				if (!item.classList.contains('scale')) {
-					item.classList.add('reduction')
-				}
-			})
-			children[0].classList.add('rotate-front')
-			children[1].classList.add('rotate-back')
-		})
-		item.addEventListener('mouseleave', () => {
-			const children = item.children
-			item.classList.remove('scale')
-			boxItems.forEach((item) => {
-				if (item.classList.contains('reduction')) {
-					item.classList.remove('reduction')
-				}
-			})
-			children[0].classList.remove('rotate-front')
-			children[1].classList.remove('rotate-back')
-		})
-	}
-) */
 
 boxItems.forEach(
 	item => {

@@ -2283,7 +2283,7 @@ textarea {
   background: #D3D3D3;
 }
 
-.tab:last-child:after {
+.tab:last-of-type:after {
   content: none;
 }
 
@@ -2291,21 +2291,20 @@ textarea {
   color: gray;
 }
 
-.tab__active,
-.tab:active {
+.tab__active {
   color: #fff;
 }
 
-.tab__active:after,
-.tab:active:after {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+.tab__active:after {
+  content: none;
 }
 
-.tab__active:hover,
-.tab:active:hover {
+.tab__active:hover {
   color: #fff;
+}
+
+.tab.after-none:after {
+  content: none;
 }
 
 .content {
