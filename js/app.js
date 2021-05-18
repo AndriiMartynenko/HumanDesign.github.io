@@ -207,4 +207,65 @@ breadcrumbLink.addEventListener('click', () => {
 	breadcrumb.classList.remove('_active')
 })
 
+
+const boxItems = document.querySelectorAll('.box-items')
+/* boxItems.forEach(
+	item => {
+		item.addEventListener('mouseenter', () => {
+			const children = item.children
+			item.classList.add('scale')
+			boxItems.forEach((item) => {
+				if (!item.classList.contains('scale')) {
+					item.classList.add('reduction')
+				}
+			})
+			children[0].classList.add('rotate-front')
+			children[1].classList.add('rotate-back')
+		})
+		item.addEventListener('mouseleave', () => {
+			const children = item.children
+			item.classList.remove('scale')
+			boxItems.forEach((item) => {
+				if (item.classList.contains('reduction')) {
+					item.classList.remove('reduction')
+				}
+			})
+			children[0].classList.remove('rotate-front')
+			children[1].classList.remove('rotate-back')
+		})
+	}
+) */
+
+boxItems.forEach(
+	item => {
+		const children = item.children
+		item.addEventListener('mouseenter', () => {
+			children[0].classList.add('rotate-front', 'flag')
+			children[1].classList.add('rotate-back', 'flag')
+			boxItems.forEach(parent => {
+				const childrens = parent.children;
+				if (!childrens[0].classList.contains('flag')) {
+					childrens[0].classList.add('reduction')
+				}
+				if (!childrens[1].classList.contains('flag')) {
+					childrens[1].classList.add('reduction-back')
+				}
+			})
+		})
+		item.addEventListener('mouseleave', () => {
+			children[0].classList.remove('rotate-front', 'flag')
+			children[1].classList.remove('rotate-back', 'flag')
+			boxItems.forEach(parent => {
+				const childrens = parent.children;
+				if (!childrens[0].classList.contains('flag')) {
+					childrens[0].classList.remove('reduction')
+				}
+				if (!childrens[1].classList.contains('flag')) {
+					childrens[1].classList.remove('reduction-back')
+				}
+			})
+		})
+	}
+)
+
 /* beautify ignore:end */

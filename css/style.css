@@ -1808,6 +1808,7 @@ textarea {
 
 .training__wrapper {
   max-width: 1340px;
+  width: 100%;
   margin: 0px auto;
   border-radius: 20px;
   background: -o-linear-gradient(336.07deg, rgba(30, 23, 55, 0.4) 21.58%, rgba(52, 28, 70, 0.4) 65.37%);
@@ -1826,6 +1827,9 @@ textarea {
   position: relative;
   -webkit-perspective: 800px;
           perspective: 800px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .box__item {
@@ -1837,6 +1841,8 @@ textarea {
 
 .box__item-front,
 .box__item-back {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   position: absolute;
   top: 0;
   left: 0;
@@ -1845,8 +1851,6 @@ textarea {
   -webkit-transition: 0.8s;
   -o-transition: 0.8s;
   transition: 0.8s;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
 }
 
 .box__item-back {
@@ -1896,18 +1900,28 @@ textarea {
 }
 
 .box__button-back:hover {
-  color: #cccccc;
+  color: #e6e6e6;
   background: #0f9244;
 }
 
-.box-items:hover .box__item-front {
+.box-items .rotate-front {
   -webkit-transform: rotateY(180deg) scale(1.1);
           transform: rotateY(180deg) scale(1.1);
 }
 
-.box-items:hover .box__item-back {
+.box-items .rotate-back {
   -webkit-transform: rotateY(360deg) scale(1.1);
           transform: rotateY(360deg) scale(1.1);
+}
+
+.box-items .reduction {
+  -webkit-transform: rotateY(0deg) scale(0.95);
+          transform: rotateY(0deg) scale(0.95);
+}
+
+.box-items .reduction-back {
+  -webkit-transform: rotateY(180deg) scale(0.95);
+          transform: rotateY(180deg) scale(0.95);
 }
 
 .skills {
@@ -1930,16 +1944,10 @@ textarea {
   font-size: 18px;
   line-height: 122.22222%;
   color: rgba(255, 255, 255, 0.6);
+  max-width: 295px;
 }
 
 .items {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   margin: 0px 0px 100px 0px;
 }
 
@@ -2091,7 +2099,7 @@ textarea {
 }
 
 .deshift__button:hover {
-  color: #cccccc;
+  color: #e6e6e6;
   background: #0f9244;
 }
 
