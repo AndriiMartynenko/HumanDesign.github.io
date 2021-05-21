@@ -4443,10 +4443,6 @@ textarea {
 }
 
 @media (max-width: 600px) {
-  .header {
-    padding: 20px 0px 0px;
-  }
-
   .menu__body {
     max-width: 100%;
     width: 100%;
@@ -4489,11 +4485,6 @@ textarea {
     height: 15px;
     width: 9px;
     background-size: contain;
-  }
-
-  .icon-menu {
-    top: 26px;
-    right: 5%;
   }
 
   .icon-menu._active {
@@ -4556,6 +4547,16 @@ textarea {
 
   .input::placeholder {
     font-size: 18px;
+  }
+
+  .header {
+    padding: 20px 0px 0px;
+  }
+
+  .icon-menu {
+    top: 26px;
+    width: 25px;
+    right: 5%;
   }
 
   .info {
