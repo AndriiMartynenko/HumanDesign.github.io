@@ -738,14 +738,6 @@
           transform: rotate(270deg);
 }
 
-.accordion-button:hover {
-  color: #b3b0b0;
-}
-
-.accordion-button:hover:before {
-  color: #b3b0b0;
-}
-
 .accordion-button:focus {
   z-index: 3;
   outline: 0;
@@ -1535,10 +1527,6 @@ textarea {
   transition: color 0.2s ease;
 }
 
-.menu__sub-link:hover {
-  color: #cccccc;
-}
-
 .menu__link {
   width: 100%;
   display: -webkit-box;
@@ -1926,17 +1914,18 @@ textarea {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
-  -webkit-transition: 0.8s;
-  -o-transition: 0.8s;
-  transition: 0.8s;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: -webkit-transform 0.8s ease 0s;
+  transition: -webkit-transform 0.8s ease 0s;
+  -o-transition: transform 0.8s ease 0s;
+  transition: transform 0.8s ease 0s;
+  transition: transform 0.8s ease 0s, -webkit-transform 0.8s ease 0s;
 }
 
 .box__item-back {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
-  position: relative;
 }
 
 .box__item-close {
@@ -3589,22 +3578,10 @@ textarea {
 
   .box-items {
     min-height: 400px;
-    padding: 0 25px;
   }
 
-  .box__item-back {
-    -webkit-transform: rotateY(360deg);
-            transform: rotateY(360deg);
-  }
-
-  .box-items .rotate-front {
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  .box-items .rotate-back {
-    -webkit-transform: rotateY(360deg);
-            transform: rotateY(360deg);
+  .box__item {
+    padding: 30px 20px;
   }
 
   .offer__wrapper {
@@ -3698,6 +3675,10 @@ textarea {
 
   .training__wrapper {
     padding: 40px 0px;
+  }
+
+  .training__slider.owl-carousel .owl-stage-outer {
+    padding: 40px 0;
   }
 
   .training__title {
@@ -4236,6 +4217,18 @@ textarea {
 }
 
 @media (any-hover: hover) {
+  .accordion-button:hover {
+    color: #b3b0b0;
+  }
+
+  .accordion-button:hover:before {
+    color: #b3b0b0;
+  }
+
+  .menu__sub-link:hover {
+    color: #cccccc;
+  }
+
   .menu__link:hover {
     color: #cccccc;
   }
