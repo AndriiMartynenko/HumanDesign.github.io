@@ -284,40 +284,27 @@ breadcrumbLink.addEventListener('click', () => {
 })
 /* Breadcrumb */
 
-/* Реализация ховера для секции training */
+/* Реализация переворота карточек для секции training */
+
+const moreButtons = document.querySelectorAll('button[data-more]')
 const boxItems = document.querySelectorAll('.box-items')
 boxItems.forEach(
 	item => {
-		const children = item.children
-		item.addEventListener('mouseenter', () => {
-			children[0].classList.add('rotate-front', 'flag')
-			children[1].classList.add('rotate-back', 'flag')
-			boxItems.forEach(parent => {
-				const childrens = parent.children;
-				if (!childrens[0].classList.contains('flag')) {
-					childrens[0].classList.add('reduction')
-				}
-				if (!childrens[1].classList.contains('flag')) {
-					childrens[1].classList.add('reduction-back')
-				}
-			})
-		})
-		item.addEventListener('mouseleave', () => {
-			children[0].classList.remove('rotate-front', 'flag')
-			children[1].classList.remove('rotate-back', 'flag')
-			boxItems.forEach(parent => {
-				const childrens = parent.children;
-				if (!childrens[0].classList.contains('flag')) {
-					childrens[0].classList.remove('reduction')
-				}
-				if (!childrens[1].classList.contains('flag')) {
-					childrens[1].classList.remove('reduction-back')
-				}
-			})
+		const childrenFront = item.querySelector('.box__item-front');
+		const childrenBack = item.querySelector('.box__item-back');
+		const closeButton = item.querySelector('.box__item-close')
+		const button = item.querySelector('button[data-more]');
+		button.addEventListener('click', () => {
+			childrenFront.classList.add('rotate-front');
+			childrenBack.classList.add('rotate-back');
+		});
+		closeButton.addEventListener('click', () => {
+			childrenFront.classList.remove('rotate-front');
+			childrenBack.classList.remove('rotate-back');
 		})
 	}
 )
-/* Реализация ховера для секции training */
+/* Реализация переворота карточек для секции training */
 
 /* Реализация переноса элемента кнопки на разных экранах */
 const deshiftParent = $('.deshift__parent')
