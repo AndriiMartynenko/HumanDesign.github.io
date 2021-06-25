@@ -155,8 +155,6 @@ owlCarouselOffer.owlCarousel({
 		},
 		768: {
 			items: 2,
-			nav: true,
-			navText: ["", ""],
 		},
 		992: {
 			items: 3,
