@@ -1730,6 +1730,7 @@ textarea {
   z-index: -1;
 }
 
+.bg source,
 .bg img {
   position: absolute;
   margin: auto;
@@ -1739,14 +1740,16 @@ textarea {
   right: 0;
 }
 
-.main_circle {
+.main_circle img,
+.main_circle source {
   width: calc(304px + 272 * ((100vw - 320px) / 1120));
   height: calc(304px + 272 * ((100vw - 320px) / 1120));
   -webkit-animation: rotate-center 5s linear infinite;
   animation: rotate-center 60s linear infinite;
 }
 
-.circle_zod {
+.circle_zod source,
+.circle_zod img {
   width: calc(227px + 205 * ((100vw - 320px) / 1120));
   height: calc(227px + 205 * ((100vw - 320px) / 1120));
   -webkit-animation: rotate-reverse 5s linear reverse infinite;
