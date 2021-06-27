@@ -1267,6 +1267,7 @@ body {
   background-repeat: no-repeat;
   background-size: 100%;
   background-attachment: fixed;
+  position: relative;
 }
 
 body._lock {
@@ -1719,6 +1720,85 @@ textarea {
   background: radial-gradient(110.87% 1422.5% at 95.35% 100%, #114abf 0, #1a72fb 100%);
   padding: 16px;
   border-radius: 50%;
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.bg img {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.main_circle {
+  width: calc(304px + 272 * ((100vw - 320px) / 1120));
+  height: calc(304px + 272 * ((100vw - 320px) / 1120));
+  -webkit-animation: rotate-center 5s linear infinite;
+  animation: rotate-center 60s linear infinite;
+}
+
+.circle_zod {
+  width: calc(227px + 205 * ((100vw - 320px) / 1120));
+  height: calc(227px + 205 * ((100vw - 320px) / 1120));
+  -webkit-animation: rotate-reverse 5s linear reverse infinite;
+  animation: rotate-reverse 60s linear reverse infinite;
+}
+
+@-webkit-keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes rotate-reverse {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-reverse {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
 .main {
@@ -2586,24 +2666,6 @@ textarea {
   -webkit-box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.7);
           box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.7);
 }
-
-/* .circles_holder .holder_c.holder_c2 {
-  -webkit-animation: rotateCCW 60s linear infinite;
-  animation: rotateCCW 60s linear infinite;
-	@keyframes rotateCCW {
-		0% {
-			transform: rotate(0);
-		}
-
-		50% {
-			transform: rotate(-180deg);
-		}
-
-		100% {
-			transform: rotate(-360deg);
-		}
-	}
-} */
 
 @media (min-width: 320px) {
   .menu__body {
