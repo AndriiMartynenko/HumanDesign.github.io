@@ -1836,18 +1836,9 @@ textarea {
   width: 100%;
   height: 1px;
   background: #4b2e5c;
-  /* Old browsers */
-  /* FF3.6+ */
-  /* Chrome,Safari4+ */
-  /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(left, #4b2e5c 0%, #763356 100%);
-  /* Opera 11.10+ */
-  /* IE10+ */
-  background: -webkit-gradient(linear, left top, right top, from(#4b2e5c), to(#763356));
-  background: linear-gradient(to right, #4b2e5c 0%, #763356 100%);
-  /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$from, endColorstr=$to, GradientType=$ie-dir);
-  /* IE6-9 */
+  background: -webkit-gradient(linear, left top, right top, color-stop(1%, #4b2e5c), to(#763356));
+  background: -o-linear-gradient(left, #4b2e5c 1%, #763356 100%);
+  background: linear-gradient(90deg, #4b2e5c 1%, #763356 100%);
   -webkit-transform-origin: 50% 50%;
       -ms-transform-origin: 50% 50%;
           transform-origin: 50% 50%;
