@@ -1267,7 +1267,6 @@ body {
   background-repeat: no-repeat;
   background-size: 100%;
   background-attachment: fixed;
-  position: relative;
 }
 
 body._lock {
@@ -1725,7 +1724,11 @@ textarea {
 
 .bg {
   position: fixed;
-  top: 0;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
   z-index: -1;
@@ -1747,14 +1750,13 @@ textarea {
   height: calc(304px + 272 * ((100vw - 320px) / 1120));
   -webkit-animation: rotate-center 5s linear infinite;
   animation: rotate-center 60s linear infinite;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 .circle_zod source,
 .circle_zod img {
   width: calc(227px + 205 * ((100vw - 320px) / 1120));
   height: calc(227px + 205 * ((100vw - 320px) / 1120));
-  -webkit-animation: rotate-reverse 5s linear reverse infinite;
   animation: rotate-reverse 60s linear reverse infinite;
   opacity: 0.3;
 }
@@ -1762,50 +1764,346 @@ textarea {
 @-webkit-keyframes rotate-center {
   0% {
     -webkit-transform: rotate(0);
-    transform: rotate(0);
+            transform: rotate(0);
   }
 
   100% {
     -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
 @keyframes rotate-center {
   0% {
     -webkit-transform: rotate(0);
-    transform: rotate(0);
+            transform: rotate(0);
   }
 
   100% {
     -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
 @-webkit-keyframes rotate-reverse {
   0% {
     -webkit-transform: rotate(0);
-    transform: rotate(0);
+            transform: rotate(0);
   }
 
   100% {
     -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
 @keyframes rotate-reverse {
   0% {
     -webkit-transform: rotate(0);
-    transform: rotate(0);
+            transform: rotate(0);
   }
 
   100% {
     -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
+
+/* Animation circles inside */
+
+.dna_wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: calc(100px + 150 * ((100vw - 320px) / 1120));
+  width: calc(50px + 30 * ((100vw - 320px) / 1120));
+  text-align: center;
+  z-index: 5;
+  overflow: hidden;
+  -webkit-transform-origin: 0 0;
+      -ms-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: rotate(45deg) translate(-50%, -50%);
+      -ms-transform: rotate(45deg) translate(-50%, -50%);
+          transform: rotate(45deg) translate(-50%, -50%);
+  opacity: 0.8;
+}
+
+.dna_wrapper .dna_line {
+  width: 100%;
+  height: 1px;
+  background: #4b2e5c;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #4b2e5c 0%, #763356 100%);
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: -webkit-gradient(linear, left top, right top, from(#4b2e5c), to(#763356));
+  background: linear-gradient(to right, #4b2e5c 0%, #763356 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$from, endColorstr=$to, GradientType=$ie-dir);
+  /* IE6-9 */
+  -webkit-transform-origin: 50% 50%;
+      -ms-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  position: relative;
+  margin-top: 0;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: calc(5px + 5 * ((100vw - 320px) / 1120));
+  -webkit-animation-name: dna;
+          animation-name: dna;
+  -webkit-animation-duration: 1200ms;
+          animation-duration: 1200ms;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: cubic-bezier(0.465, 0.19, 0.455, 0.705);
+          animation-timing-function: cubic-bezier(0.465, 0.19, 0.455, 0.705);
+}
+
+.dna_wrapper .dna_line.dna_line_0 {
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
+}
+
+.dna_wrapper .dna_line.dna_line_0:before,
+.dna_wrapper .dna_line.dna_line_0:after {
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
+}
+
+.dna_wrapper .dna_line.dna_line_1 {
+  -webkit-animation-delay: 100ms;
+          animation-delay: 100ms;
+}
+
+.dna_wrapper .dna_line.dna_line_1:before,
+.dna_wrapper .dna_line.dna_line_1:after {
+  -webkit-animation-delay: 100ms;
+          animation-delay: 100ms;
+}
+
+.dna_wrapper .dna_line.dna_line_2 {
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms;
+}
+
+.dna_wrapper .dna_line.dna_line_2:before,
+.dna_wrapper .dna_line.dna_line_2:after {
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms;
+}
+
+.dna_wrapper .dna_line.dna_line_3 {
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
+}
+
+.dna_wrapper .dna_line.dna_line_3:before,
+.dna_wrapper .dna_line.dna_line_3:after {
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
+}
+
+.dna_wrapper .dna_line.dna_line_4 {
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
+}
+
+.dna_wrapper .dna_line.dna_line_4:before,
+.dna_wrapper .dna_line.dna_line_4:after {
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
+}
+
+.dna_wrapper .dna_line.dna_line_5 {
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
+}
+
+.dna_wrapper .dna_line.dna_line_5:before,
+.dna_wrapper .dna_line.dna_line_5:after {
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
+}
+
+.dna_wrapper .dna_line.dna_line_6 {
+  -webkit-animation-delay: 600ms;
+          animation-delay: 600ms;
+}
+
+.dna_wrapper .dna_line.dna_line_6:before,
+.dna_wrapper .dna_line.dna_line_6:after {
+  -webkit-animation-delay: 600ms;
+          animation-delay: 600ms;
+}
+
+.dna_wrapper .dna_line.dna_line_7 {
+  -webkit-animation-delay: 700ms;
+          animation-delay: 700ms;
+}
+
+.dna_wrapper .dna_line.dna_line_7:before,
+.dna_wrapper .dna_line.dna_line_7:after {
+  -webkit-animation-delay: 700ms;
+          animation-delay: 700ms;
+}
+
+.dna_wrapper .dna_line.dna_line_8 {
+  -webkit-animation-delay: 800ms;
+          animation-delay: 800ms;
+}
+
+.dna_wrapper .dna_line.dna_line_8:before,
+.dna_wrapper .dna_line.dna_line_8:after {
+  -webkit-animation-delay: 800ms;
+          animation-delay: 800ms;
+}
+
+.dna_wrapper .dna_line.dna_line_9 {
+  -webkit-animation-delay: 900ms;
+          animation-delay: 900ms;
+}
+
+.dna_wrapper .dna_line.dna_line_9:before,
+.dna_wrapper .dna_line.dna_line_9:after {
+  -webkit-animation-delay: 900ms;
+          animation-delay: 900ms;
+}
+
+.dna_wrapper .dna_line.dna_line_10 {
+  -webkit-animation-delay: 1000ms;
+          animation-delay: 1000ms;
+}
+
+.dna_wrapper .dna_line.dna_line_10:before,
+.dna_wrapper .dna_line.dna_line_10:after {
+  -webkit-animation-delay: 1000ms;
+          animation-delay: 1000ms;
+}
+
+.dna_wrapper .dna_line.dna_line_11 {
+  -webkit-animation-delay: 1100ms;
+          animation-delay: 1100ms;
+}
+
+.dna_wrapper .dna_line.dna_line_11:before,
+.dna_wrapper .dna_line.dna_line_11:after {
+  -webkit-animation-delay: 1100ms;
+          animation-delay: 1100ms;
+}
+
+.dna_wrapper .dna_line:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 0;
+  border-radius: 100px;
+  background: #7e83c7;
+  -webkit-animation-name: dot-left;
+          animation-name: dot-left;
+  -webkit-animation-duration: 1200ms;
+          animation-duration: 1200ms;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+.dna_wrapper .dna_line:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 0;
+  border-radius: 100px;
+  background: #7e83c7;
+  -webkit-animation-name: dot-right;
+          animation-name: dot-right;
+  -webkit-animation-duration: 1200ms;
+          animation-duration: 1200ms;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes dna {
+  0%, 100% {
+    width: 100%;
+  }
+
+  50% {
+    width: 0%;
+  }
+}
+
+@keyframes dna {
+  0%, 100% {
+    width: 100%;
+  }
+
+  50% {
+    width: 0%;
+  }
+}
+
+@-webkit-keyframes dot-left {
+  0%, 100% {
+    width: 1px;
+    height: 1px;
+  }
+
+  50% {
+    width: 3px;
+    height: 3px;
+  }
+}
+
+@keyframes dot-left {
+  0%, 100% {
+    width: 1px;
+    height: 1px;
+  }
+
+  50% {
+    width: 3px;
+    height: 3px;
+  }
+}
+
+@-webkit-keyframes dot-right {
+  0%, 100% {
+    width: 5px;
+    height: 5px;
+  }
+
+  50% {
+    width: 3px;
+    height: 3px;
+  }
+}
+
+@keyframes dot-right {
+  0%, 100% {
+    width: 5px;
+    height: 5px;
+  }
+
+  50% {
+    width: 3px;
+    height: 3px;
+  }
+}
+
+/* Animation circles inside */
 
 .main {
   height: 100vh;
