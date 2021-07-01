@@ -142,26 +142,29 @@ owlCarouselOffer.owlCarousel({
 	dots: true,
 	dotsEach: true,
 	responsiveClass: true,
+	nav: true,
+	navText: ["", ""],
 	responsive: {
 		320: {
 			items: 1,
-			nav: true,
-			navText: ["", ""],
 		},
 		576: {
 			items: 1,
-			nav: true,
-			navText: ["", ""],
 		},
 		768: {
 			items: 2,
+			nav: false
 		},
 		992: {
 			items: 3,
+			nav: false
+
 
 		},
 		1250: {
-			items: 4
+			items: 4,
+			nav: false
+
 		}
 	}
 })
@@ -179,7 +182,7 @@ $(window).on('load resize', function () {
 			nav: true,
 			navText: ["", ""],
 			margin: 25,
-			dots: false,
+			dots: true,
 			responsiveClass: true,
 			responsive: {
 				320: {
